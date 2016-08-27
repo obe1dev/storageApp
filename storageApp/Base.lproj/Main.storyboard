@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zFU-g0-Nvl">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="storageApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,97 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="hUe-ZJ-nPz" userLabel="Text Field Stack View">
+                                <rect key="frame" x="20" y="156" width="560" height="75"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dx0-sL-bkl">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="au7-rW-W0s">
+                                        <rect key="frame" x="0.0" y="45" width="560" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="dx0-sL-bkl" secondAttribute="trailing" id="4AQ-a2-Ij0"/>
+                                    <constraint firstItem="au7-rW-W0s" firstAttribute="leading" secondItem="hUe-ZJ-nPz" secondAttribute="leading" id="Ab8-KP-3Er"/>
+                                    <constraint firstItem="dx0-sL-bkl" firstAttribute="leading" secondItem="hUe-ZJ-nPz" secondAttribute="leading" id="Ffn-Wy-DbD"/>
+                                    <constraint firstAttribute="trailing" secondItem="au7-rW-W0s" secondAttribute="trailing" id="Wyg-Zx-7eM"/>
+                                    <constraint firstItem="dx0-sL-bkl" firstAttribute="top" secondItem="hUe-ZJ-nPz" secondAttribute="top" id="Xh6-Zy-vPx"/>
+                                    <constraint firstAttribute="bottom" secondItem="au7-rW-W0s" secondAttribute="bottom" id="oVM-CL-hZR"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Ttr-dl-Sv5" userLabel="Button Stack View">
+                                <rect key="frame" x="200" y="280" width="200" height="120"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m15-oe-PL6">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
+                                        <state key="normal" title="Email sign Up"/>
+                                        <connections>
+                                            <action selector="emailSignUn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nwo-EP-WVa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEU-KN-NVt">
+                                        <rect key="frame" x="0.0" y="45" width="200" height="30"/>
+                                        <state key="normal" title="Email login"/>
+                                        <connections>
+                                            <action selector="emailLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Edz-lq-3Iy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4X0-Es-8ve">
+                                        <rect key="frame" x="0.0" y="90" width="200" height="30"/>
+                                        <state key="normal" title="Facebook Login"/>
+                                        <connections>
+                                            <action selector="facebookLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GJZ-zo-rlQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="644-zJ-Ydn"/>
+                                    <constraint firstAttribute="height" constant="120" id="aEl-CX-I8M"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ttr-dl-Sv5" firstAttribute="top" secondItem="hUe-ZJ-nPz" secondAttribute="bottom" constant="49" id="M5F-8M-DhY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hUe-ZJ-nPz" secondAttribute="trailing" id="O1i-3N-yL7"/>
+                            <constraint firstItem="hUe-ZJ-nPz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Qhn-XG-WZ2"/>
+                            <constraint firstItem="Ttr-dl-Sv5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fKc-hh-zXQ"/>
+                            <constraint firstItem="hUe-ZJ-nPz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="92" id="rMQ-Y7-1Bd"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Login" id="s8r-F9-cko"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="dx0-sL-bkl" id="3zA-7S-qOv"/>
+                        <outlet property="passwordTextField" destination="au7-rW-W0s" id="bs7-EB-Iqo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1117" y="387"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oKh-tP-w2b">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zFU-g0-Nvl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ups-PV-GGm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="DCK-0D-pi4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nLO-M7-3F2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="411" y="387"/>
         </scene>
     </scenes>
 </document>
